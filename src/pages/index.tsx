@@ -42,7 +42,7 @@ export default function Home({ product }: HomeProps) {
 
 //SSR(server side Rendering)
 export const getStaticProps: GetStaticProps = async () => {
-  const price = await stripe.prices.retrieve('price_1JncqMLy81ZRiRHZwxB1K4SE', {
+  const price = await stripe.prices.retrieve('price_1Ju9kKByL3hmBAeWMhUbcjyS', {
     expand: ['product']// fala para a requisição que quer todos os campos do objeto
   })
 
