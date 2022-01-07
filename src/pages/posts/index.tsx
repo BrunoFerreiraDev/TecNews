@@ -1,9 +1,12 @@
-import styles from './styles.module.scss'
-import Head from 'next/head'
-import { GetStaticProps } from 'next'
-import Prismic from '@prismicio/client'
+import { getPrismicClient } from '../../services/prismic'
 import { RichText } from 'prismic-dom'
-import { getPrismicClietn } from '../../services/prismic'
+import Prismic from '@prismicio/client'
+
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
+import Link from 'next/link'
+
+import styles from './styles.module.scss'
 
 type Post = {
     slug: string;
@@ -29,13 +32,15 @@ export default function Posts({ posts }: PostProps) {
                 <div className={styles.posts}>
                     {
                         posts.map(post => (
-                            <a key={post.slug} href='#'>
-                                <time>
-                                    {post.updatedAt}
-                                </time>
-                                <strong>{post.title}</strong>
-                                <p>{post.excerpt}</p>
-                            </a>
+                            <Link key={post.slug} href={`/posts/${post.slug}`}>
+                                <a href='#'>
+                                    <time>
+                                        {post.updatedAt}
+                                    </time>
+                                    <strong>{post.title}</strong>
+                                    <p>{post.excerpt}</p>
+                                </a>
+                            </Link>
                         ))
                     }
                 </div>
@@ -45,7 +50,7 @@ export default function Posts({ posts }: PostProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const prismic = getPrismicClietn();
+    const prismic = getPrismicClient();
 
     const response = await prismic.query(
         [Prismic.predicates.at('document.type', 'publication')],
