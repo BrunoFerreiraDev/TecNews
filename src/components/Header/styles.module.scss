@@ -1,7 +1,26 @@
 .headerContainer{
     height: 5rem;
     border-bottom: 1px solid var(--gray-800);
+}
+#light{
+    background: var(--white);
+    color: var(--black);
+}
 
+.tooggle{
+    background: transparent;
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--cyan-500);
+    border-radius: 0.25rem;
+
+    position: absolute;
+    top: 1.4rem;
+    right: 15rem;
+    img{
+        height: 30px;
+        width: 30px;
+    }
 }
 
 .headerContent{

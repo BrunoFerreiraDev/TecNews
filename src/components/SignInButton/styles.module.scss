@@ -3,7 +3,8 @@
     border-radius: 3rem;
     background: var(--gray-850);
     border: 0;
-    padding: 0;
+    
+    padding: 1rem;
 
     display: flex;
     align-items: center;
@@ -18,10 +19,10 @@
     }
 
     svg:first-child {
-        margin-right: 1rem;
+        margin-right: 0.5rem;
     }
     svg:last-child {
-        margin-left: 1rem;
+        margin-left: 0.3rem;
     }
 
     transition: filter 0.2s;

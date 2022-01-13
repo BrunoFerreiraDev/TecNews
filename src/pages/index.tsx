@@ -1,7 +1,10 @@
 import { GetStaticProps } from "next"
 import Head from "next/head"
-import { SubscribeButton } from "../components/SubscribeButton"
+import { useContext } from "react"
+
 import { stripe } from "../services/stripe"
+import { SubscribeButton } from "../components/SubscribeButton"
+import { themaContext } from '../themaContext'
 
 import styles from './home.module.scss'
 
@@ -18,23 +21,27 @@ interface HomeProps {
 }
 
 export default function Home({ product }: HomeProps) {
-  return (
+  const casa = useContext(themaContext)
 
+
+  return (
     <>
-      <Head>
-        <title>Home | TecNews</title>
-      </Head>
-      <main className={styles.contentContainer}>
-        <section className={styles.hero}>
-          <span>👏 Hey, welcome</span>
-          <h1>News about the <span>React</span> world.</h1>
-          <p>
-            Get access to all the publications <br />
-            <span>for {product.amount} month</span>
-          </p>
-          <SubscribeButton priceId={product.priceId} />
-        </section>
-        <img src="/images/avatar.svg" alt="Girl coding" />
+      <main id={casa.stateTheme === 'dark' ? styles.dark : styles.light}>
+        <Head>
+          <title>Home | TecNews</title>
+        </Head>
+        <div className={styles.contentContainer} >
+          <section className={styles.hero}>
+            <span>👏 Hey, welcome</span>
+            <h1>News about the <span>React</span> world.</h1>
+            <p>
+              Get access to all the publications <br />
+              <span>for {product.amount} month</span>
+            </p>
+            <SubscribeButton priceId={product.priceId} />
+          </section>
+          <img src="/images/avatar.svg" alt="Girl coding" />
+        </div>
       </main>
     </>
   )
