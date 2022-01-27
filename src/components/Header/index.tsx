@@ -26,7 +26,7 @@ export function Header() {
                 <button className={styles.tooggle} onClick={() => onThemeTooggle()}>
                     {dataContext.stateTheme === 'dark' ? <Image src={iconMoon} alt="icon da lua" /> : <Image src={iconSun} alt="icon do sol" />}
                 </button>
-                <img src="/images/TecNews.png" alt="tecnews" />
+                {dataContext.stateTheme === 'dark'? <img src="/images/TecNews.png" alt="tecnews" />:<img src="/images/TecNewsLight.png" alt="tecnews" />}
                 <nav>
                     <ActiveLink activeClassName={styles.active} href="/">
                         <a >Home</a>

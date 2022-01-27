@@ -21,12 +21,12 @@ interface HomeProps {
 }
 
 export default function Home({ product }: HomeProps) {
-  const casa = useContext(themaContext)
+  const thema = useContext(themaContext)
 
 
   return (
     <>
-      <main id={casa.stateTheme === 'dark' ? styles.dark : styles.light}>
+      <main id={thema.stateTheme === 'dark' ? styles.dark : styles.light}>
         <Head>
           <title>Home | TecNews</title>
         </Head>
@@ -40,7 +40,7 @@ export default function Home({ product }: HomeProps) {
             </p>
             <SubscribeButton priceId={product.priceId} />
           </section>
-          <img src="/images/avatar.svg" alt="Girl coding" />
+          {thema.stateTheme === 'dark'?<img src="/images/avatar.svg" alt="Girl coding" />:<img src="/images/avatarLight.svg" alt="Girl coding" />}
         </div>
       </main>
     </>

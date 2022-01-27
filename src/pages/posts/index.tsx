@@ -7,6 +7,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import styles from './styles.module.scss'
+import { useContext } from 'react'
+import { themaContext } from '../../themaContext'
 
 type Post = {
     slug: string;
@@ -21,14 +23,15 @@ interface PostProps {
 
 export default function Posts({ posts }: PostProps) {
 
-    console.log(posts[0].updatedAt);
+    const dataContext = useContext(themaContext)
 
     return (
         <>
             <Head>
                 <title>Posts | Tecnews</title>
             </Head>
-            <main className={styles.container}>
+            <main  id={dataContext.stateTheme === 'light' ? styles.light : ''}>
+                <div className={styles.container}>
                 <div className={styles.posts}>
                     {
                         posts.map(post => (
@@ -43,6 +46,7 @@ export default function Posts({ posts }: PostProps) {
                             </Link>
                         ))
                     }
+                </div>
                 </div>
             </main>
         </>

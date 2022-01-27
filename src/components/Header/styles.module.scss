@@ -2,10 +2,6 @@
     height: 5rem;
     border-bottom: 1px solid var(--gray-800);
 }
-#light{
-    background: var(--white);
-    color: var(--black);
-}
 
 .tooggle{
     background: transparent;
@@ -70,5 +66,15 @@
 
     button{
         margin-left: auto;
+    }
+}
+
+#light{
+    background: var(--white--50);
+    color: var(--black);
+
+    a:hover{
+        color: var(--black);
+        font-weight: bold;
     }
 }

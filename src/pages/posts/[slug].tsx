@@ -6,6 +6,8 @@ import { getSession } from "next-auth/client"
 import { GetServerSideProps } from "next"
 
 import styles from '../posts/post.module.scss'
+import { themaContext } from "../../themaContext"
+import { useContext } from "react"
 
 interface PostProps {
     post: {
@@ -17,13 +19,15 @@ interface PostProps {
 }
 
 export default function Post({ post }: PostProps) {
+    const dataContext = useContext(themaContext)
 
     return (
         <>
             <Head>
                 <title>{post.title} | TecNews</title>
             </Head>
-            <main className={styles.container}>
+            <main className={styles.container} id={dataContext.stateTheme === 'light' ? styles.light : ''}>
+                <div className={styles.container}>
                 <article className={styles.post}>
                     <h1>{post.title}</h1>
                     <time>{post.updatedAt}</time>
@@ -31,6 +35,7 @@ export default function Post({ post }: PostProps) {
                         className={styles.postContent}
                         dangerouslySetInnerHTML={{ __html: post.content }} />{/*change the content inner of the element*/}
                 </article>
+                </div>
             </main>
         </>
     )

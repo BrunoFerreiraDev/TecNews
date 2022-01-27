@@ -7,8 +7,9 @@ import { GetStaticPaths, GetStaticProps } from "next"
 import styles from '../../posts/post.module.scss'
 import Link from "next/link"
 import { useSession } from "next-auth/client"
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 import { useRouter } from "next/router"
+import { themaContext } from "../../../themaContext"
 
 interface PostPreviewProps {
     post: {
@@ -20,6 +21,7 @@ interface PostPreviewProps {
 }
 
 export default function PostPreview({ post }: PostPreviewProps) {
+    const dataContext = useContext(themaContext)
 
     const [session] = useSession()
     const router = useRouter()
@@ -34,10 +36,11 @@ export default function PostPreview({ post }: PostPreviewProps) {
 
     return (
         <>
+            <main  id={dataContext.stateTheme === 'light' ? styles.light : ''}>
+                <div className={styles.container}>
             <Head>
                 <title>{post.title} | TecNews</title>
             </Head>
-            <main className={styles.container}>
                 <article className={styles.post}>
                     <h1>{post.title}</h1>
                     <time>{post.updatedAt}</time>
@@ -53,6 +56,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
                         </Link>
                     </div>
                 </article>
+                </div>
             </main>
         </>
     )
