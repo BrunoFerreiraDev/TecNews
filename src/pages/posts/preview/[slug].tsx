@@ -35,9 +35,9 @@ export default function PostPreview({ post }: PostPreviewProps) {
     }, [session])
 
     return (
-        <>
-            <main  id={dataContext.stateTheme === 'light' ? styles.light : ''}>
-                <div className={styles.container}>
+        <body className={styles.body} id={dataContext.stateTheme === 'light' ? styles.light : styles.dark}>
+            <main className={styles.container}  id={dataContext.stateTheme === 'light' ? styles.light : ''}>
+                
             <Head>
                 <title>{post.title} | TecNews</title>
             </Head>
@@ -56,9 +56,8 @@ export default function PostPreview({ post }: PostPreviewProps) {
                         </Link>
                     </div>
                 </article>
-                </div>
             </main>
-        </>
+        </body>
     )
 }
 

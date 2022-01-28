@@ -26,11 +26,11 @@ export default function Posts({ posts }: PostProps) {
     const dataContext = useContext(themaContext)
 
     return (
-        <>
+        <body className={styles.body} id={dataContext.stateTheme === 'light' ? styles.light : ''}>
             <Head>
                 <title>Posts | Tecnews</title>
             </Head>
-            <main  id={dataContext.stateTheme === 'light' ? styles.light : ''}>
+            <main  >
                 <div className={styles.container}>
                 <div className={styles.posts}>
                     {
@@ -49,7 +49,7 @@ export default function Posts({ posts }: PostProps) {
                 </div>
                 </div>
             </main>
-        </>
+        </body>
     )
 }
 

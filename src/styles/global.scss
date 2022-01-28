@@ -20,12 +20,11 @@
     --cyan-500: #61dafb;
     --yellow-500: #eba417;
 }
+// body{
+//     background: var(--gray--900);
+//     color: var(--white);
+// }
 
-body {
-    background: var(--gray--900);
-    color: var(--white);
-
-}
 body, input textarea, select, button{
     font: 400 1rem "Roboto", sans-serif;
 }

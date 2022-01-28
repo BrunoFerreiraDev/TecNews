@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider >
       <NextAuthProvider session={pageProps.sesseion}>
         <Header />
-        <Component  {...pageProps} />
+        <Component {...pageProps} />
       </NextAuthProvider>
     </ThemeProvider>
   )

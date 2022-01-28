@@ -25,7 +25,7 @@ export default function Home({ product }: HomeProps) {
 
 
   return (
-    <>
+    <body className={styles.body}>
       <main id={thema.stateTheme === 'dark' ? styles.dark : styles.light}>
         <Head>
           <title>Home | TecNews</title>
@@ -43,7 +43,7 @@ export default function Home({ product }: HomeProps) {
           {thema.stateTheme === 'dark'?<img src="/images/avatar.svg" alt="Girl coding" />:<img src="/images/avatarLight.svg" alt="Girl coding" />}
         </div>
       </main>
-    </>
+    </body>
   )
 }
 

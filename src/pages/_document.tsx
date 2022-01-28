@@ -9,10 +9,8 @@ export default class MyDocument extends Document {
                     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
                     <link rel="shotcut icon" href="/favicon.png" type="image/png" />
                 </Head>
-                <body>
                     <Main />
                     <NextScript />
-                </body>
             </Html >
         )
     }
