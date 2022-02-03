@@ -24,7 +24,7 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
         }
 
         try {
-            const response = await api.post('/subscribe')//faz requisição do tipo post para cadastrar o usuario no stripe
+            const response = await api.get('/subscribe')//faz requisição do tipo post para cadastrar o usuario no stripe
 
             const { sessionId } = response.data;
 
