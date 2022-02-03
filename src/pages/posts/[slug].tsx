@@ -61,7 +61,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
 
     const post = {
         slug,
-        title: RichText.asText(response.data?.title),// get the title os the post
+        title: RichText.asText(response.data?.Title),// get the title os the post
         content: RichText.asHtml(response.data.content),//get the content of the pos and convert to html
         updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR', {
             day: '2-digit',
