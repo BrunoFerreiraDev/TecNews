@@ -1,20 +1,19 @@
-.body{
+
+#containerLight{
     background: var(--white--50);
     color: var(--black);
 }
-
 .container{
-    max-width: 1120px;
+    width: 98.79vw;
     margin: 0 auto;
-    padding: 0 2rem;
-    height: calc(100vh - 5rem);//terá 100% da altura da tela do pc - menos a altura do header que é 5rem 😉
-    
+    padding: 0 2rem;    
+    padding-top: 2rem;
+    overflow: auto;
 }
 .post{
     max-width: 1120px;
-    margin: 5rem auto 0;
-    height: 100vh;
-
+    margin: 0 auto 0;
+    width: 100vw;
     h1{
         font-size: 2.8rem;
         font-weight: 900;
@@ -31,7 +30,6 @@
         margin-top: 2rem;
         line-height: 2rem;
         font-size: 1.125rem;
-        color: var(--gray-100);
 
         p, ul {
             margin:1.5rem;
@@ -65,18 +63,12 @@
     a{
         color: var(--yellow-500);
         margin-left: 0.5rem;
+
+        text-decoration: underline;
         
         &:hover{
             text-decoration: underline;
         }
     }
-
-}
-
-
-
-.body{
-    background: var(--white--50);
-    color: var(--black);
 
 }

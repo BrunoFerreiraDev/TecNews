@@ -7,6 +7,7 @@ import iconSun from '../../../public/images/iconSun.png'
 import iconMoon from '../../../public/images/iconMoon.png'
 import styles from './styles.module.scss'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function Header() {
     const dataContext = useContext(themaContext)
@@ -23,10 +24,17 @@ export function Header() {
     return (
         <header className={styles.headerContainer} id={dataContext.stateTheme === 'light' ? styles.light : ''}>
             <div className={styles.headerContent}>
+
                 <button className={styles.tooggle} onClick={() => onThemeTooggle()}>
-                    {dataContext.stateTheme === 'dark' ? <Image src={iconMoon} alt="icon da lua" /> : <Image src={iconSun} alt="icon do sol" />}
+                {dataContext.stateTheme === 'dark' ? <Image src={iconMoon} alt="icon da lua" /> : <Image src={iconSun} alt="icon do sol" />}
                 </button>
+
+                <Link href="/">
+                        <a>
                 {dataContext.stateTheme === 'dark'? <img src="/images/TecNews.png" alt="tecnews" />:<img src="/images/TecNewsLight.png" alt="tecnews" />}
+                        </a>
+                    </Link>
+                    
                 <nav>
                     <ActiveLink activeClassName={styles.active} href="/">
                         <a >Home</a>
