@@ -48,6 +48,10 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        a{
+            text-decoration: underline;
+            color: var(--yellow-500);
+        }
     }
 }
 
@@ -64,7 +68,7 @@
         color: var(--yellow-500);
         margin-left: 0.5rem;
 
-        text-decoration: underline;
+        // text-decoration: underline;
         
         &:hover{
             text-decoration: underline;

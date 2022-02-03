@@ -26,7 +26,7 @@ export default function Home({ product }: HomeProps) {
 
   return (
     <body className={styles.body}>
-      <main id={thema.stateTheme === 'dark' ? styles.dark : styles.light}>
+      <main id={thema.stateTheme === 'light' ? styles.light : ''}>
         <Head>
           <title>Home | TecNews</title>
         </Head>

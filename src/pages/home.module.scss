@@ -52,4 +52,10 @@
 #light{
     background: var(--white--50);
     color: var(--black);
+    div>section>h1>span{
+        color: var(--cyan-700);
+    }
+    div>section>p>span{
+        color: var(--cyan-700);
+    }
 }
