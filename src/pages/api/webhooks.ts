@@ -29,7 +29,7 @@ const relevantEvents = new Set([
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
 
-    if (req.method === 'POST') {
+    if (req.method === 'GET') {
         const buf = await buffer(req)
         const secret = req.headers['stripe-signature']
 
@@ -66,7 +66,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
         res.status(200).json({ received: true })
     } else {
-        res.setHeader('Allow', 'POST')
+        res.setHeader('Allow', 'GET')
         res.status(405).end('Method not allowed')
     }
 }
