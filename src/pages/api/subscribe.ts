@@ -29,7 +29,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         )
 
         let customerId = user.data.stripe_customer_id
-        console.log("oi, sou o customerId", customerId);
 
         if (!customerId) {
             const stripeCustomer = await stripe.customers.create({
