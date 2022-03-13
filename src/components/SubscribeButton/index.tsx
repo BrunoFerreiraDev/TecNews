@@ -23,18 +23,18 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
             return
         }
 
-        // try {
-        //     const response = await api.post('/subscribe')//faz requisição do tipo post para cadastrar o usuario no stripe
+        try {
+            const response = await api.post('/subscribe')//faz requisição do tipo post para cadastrar o usuario no stripe
 
-        //     const { sessionId } = response.data;
+            const { sessionId } = response.data;
 
-        //     const stripe = await getStripeJs();
+            const stripe = await getStripeJs();
 
-        //     await stripe.redirectToCheckout({ sessionId });
+            await stripe.redirectToCheckout({ sessionId });
 
-        // } catch (err) {
-        //     alert(err.message)
-        // }
+        } catch (err) {
+            alert(err.message)
+        }
     }
 
     return (
