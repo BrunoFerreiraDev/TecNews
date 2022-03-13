@@ -39,8 +39,6 @@ export default function Home({ product }: HomeProps) {
               <span>for {product.amount} month</span>
             </p>
             <SubscribeButton priceId={product.priceId} />
-            <a href="./pdfList/sample2.pdf" target="_blank">Ver arquivo PDF</a>
-
           </section>
           {thema.stateTheme === 'dark'?<img src="/images/avatar.svg" alt="Girl coding" />:<img src="/images/avatarLight.svg" alt="Girl coding" />}
         </div>

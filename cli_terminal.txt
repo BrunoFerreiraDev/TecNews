@@ -1,1 +1,1 @@
-C:\Users\bruno\Downloads\backup\stripe_1.7.8_windows_x86_64\stripe.exe listen --forward-to localhost:3000/api/webhooks
+C:\Users\bruno\Desktop\Personal-Project\TecNews\stripe.exe listen --forward-to localhost:3000/api/webhooks
