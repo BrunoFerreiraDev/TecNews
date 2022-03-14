@@ -27,6 +27,7 @@ export function SignInButton() {
         <button
             type="button"
             className={styles.signInButton}
+            id={dataContext.stateTheme === 'light' ? styles.light : ''}
             onClick={() => signIn('github')}
         >
             <FaGithub color="#eba417" />
