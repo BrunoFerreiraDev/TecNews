@@ -24,6 +24,10 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
             return
         }
 
+        if(!session.user.email){
+            router.push("http://localhost:3000/pageError")
+        }        
+
         try {
             const response = await api.post('/subscribe')//faz requisição do tipo post para cadastrar o usuario no stripe
 

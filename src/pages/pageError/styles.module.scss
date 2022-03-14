@@ -1,0 +1,36 @@
+.body{
+    background: var(--gray--900);
+    color: var(--white);
+}
+
+#img{
+    width: 500px;
+    height: 400px;
+}
+
+.contentContainer{
+    max-width: 1120px;
+    margin:  0 auto;
+    padding: 0 5rem;
+    height: calc(100vh - 5rem);//terá 100% da altura da tela do pc - menos a altura do header que é 5rem 😉
+
+    text-align: center;
+
+    h1{
+        font-size: 20px;
+        margin-bottom: 1.5rem;
+    }
+    }
+
+
+
+#light{
+    background: var(--white--50);
+    color: var(--black);
+    div>section>h1>span{
+        color: var(--cyan-700);
+    }
+    div>section>p>span{
+        color: var(--cyan-700);
+    }
+}

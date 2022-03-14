@@ -11,6 +11,7 @@ type User = {
     },
     data: {
         stripe_customer_id: string;
+        email,
     }
 }
 
@@ -18,6 +19,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (req.method === 'POST') {
         const session = await getSession({ req })
+               
 
         const user = await fauna.query<User>(
             q.Get(
@@ -27,6 +29,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                 )
             )
         )
+
+       
 
         let customerId = user.data.stripe_customer_id
 
