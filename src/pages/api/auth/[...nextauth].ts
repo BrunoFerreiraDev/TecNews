@@ -5,6 +5,7 @@ import Provider from "next-auth/providers"
 import { fauna } from '../../../services/fauna'
 
 export default NextAuth({
+    
     // Configure one or more authentication providers
     providers: [
         Provider.GitHub({
@@ -14,6 +15,7 @@ export default NextAuth({
         }),
         // ...add more providers here
     ],
+    
 
     callbacks: {
         async session(session) {
