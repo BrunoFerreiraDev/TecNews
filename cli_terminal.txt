@@ -1,1 +1,3 @@
+arquivo para executar o stripe cli do webhooks
+
 C:\Users\bruno\Desktop\Personal-Project\TecNews\stripe.exe listen --forward-to localhost:3000/api/webhooks
